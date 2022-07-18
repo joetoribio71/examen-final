@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+    <head th:replace="layout/layout :: head">
+        <title>Organizaciones Sociales</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container" layout:fragment="page-content">    
+            <div> <h1>PEDIDOS</h1> 
+            </div>
+            <hr>
+            <a th:href="@{/ped/form}" class="btn btn-info">Agregar pedido</a>
+            <hr>
+            <table class="table">
+                <thead>
+                    <tr>                        
+                        <th scope="col">ID</th>
+                        <th scope="col">CLIENTE</th>
+                        <th scope="col">FECHA</th>
+                        <th scope="col">REPARTO</th>
+                        <th scope="col">PRODUCTO</th>
+                        <th scope="col">CANTIDAD</th>
+                        <th scope="col">PRECIO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="ped :${pedidos}">                        
+                        <td th:text="${ped.idpedido}"></td>
+                        <td th:text="${ped.cliente}"></td>
+                        <td th:text="${ped.fecha}"></td>
+                        <td th:text="${ped.reparto}"></td>
+                        <td th:text="${ped.producto}"></td>
+                        <td th:text="${ped.cantidad}"></td>
+                        <td th:text="${ped.precio}"></td>
+                        <td>
+                            <a th:href="@{/ped/edit/} + ${ped.idpedido}" title="Editar Registro"><i class='fa-solid fa-pen-to-square text-warning me-3'></i></a>
+                            <a th:href="@{/ped/del/} + ${ped.idpedido}" title="Eliminar Registro"><i class='fa-solid fa-trash-can text-danger me-3'></i></a>
+                        </td>
+                    </tr>                    
+                </tbody>
+            </table>
+        </div>
+
+    </body>
+</html>

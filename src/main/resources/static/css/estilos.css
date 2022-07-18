@@ -1,0 +1,14 @@
+body{
+  background-image: url(http://www.munichaclacayo.gob.pe/portals/slider/imagenes/1.jpg) ;
+  height: 80rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;    
+}
+
+a{
+    text-decoration: none;
+}
+
+
