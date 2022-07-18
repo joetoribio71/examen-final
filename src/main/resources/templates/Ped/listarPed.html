@@ -8,23 +8,22 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
-        <div class="container" layout:fragment="page-content">    
-            <div> <h1>PEDIDOS</h1> 
+    <body style="background-color: orange">
+        <div class="container" layout:fragment="page-content" style="background-color: rgba(2,  2, 0, 0.6); border-radius: 10px">    
+            <div> <h1 class="text-center text-white">PEDIDOS</h1>
+                <h5 class="text-center text-warning">Rellene los datos</h5>
             </div>
-            <hr>
-            <a th:href="@{/ped/form}" class="btn btn-info">Agregar pedido</a>
-            <hr>
-            <table class="table">
+
+            <table class="table text-white">
                 <thead>
                     <tr>                        
-                        <th scope="col">ID</th>
-                        <th scope="col">CLIENTE</th>
-                        <th scope="col">FECHA</th>
-                        <th scope="col">REPARTO</th>
-                        <th scope="col">PRODUCTO</th>
-                        <th scope="col">CANTIDAD</th>
-                        <th scope="col">PRECIO</th>
+                        <th scope="col" class="text-white">id</th>
+                        <th scope="col" class="text-white">cliente</th>
+                        <th scope="col" class="text-white">fecha</th>
+                        <th scope="col" class="text-white">reparto</th>
+                        <th scope="col" class="text-white">producto</th>
+                        <th scope="col" class="text-white">catidad</th>
+                        <th scope="col" class="text-white">precio</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,6 +42,9 @@
                     </tr>                    
                 </tbody>
             </table>
+            <hr>
+            <a th:href="@{/ped/form}" class="btn btn-warning">Agregar pedido</a>
+            <hr>
         </div>
 
     </body>
